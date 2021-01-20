@@ -25,12 +25,14 @@ mvnw
 mvnw.cmd
 
 ### Node
-frontend/dist
-frontend/node_modules
-frontend/src/node/
-frontend/src/node/node_modules
-frontend/package-lock.json
-frontend/node/
+online-registration-frontend/dist
+online-registration-frontend/node_modules
+online-registration-frontend/src/node/
+online-registration-frontend/src/node/node_modules
+online-registration-frontend/package-lock.json
+online-registration-frontend/node/
+online-registration-backend/target/
+**/node_modules
 
 ### NetBeans ###
 /nbproject/private/
