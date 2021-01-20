@@ -4,10 +4,9 @@ import net.iqbusiness.online.registration.dto.RegistrationForm;
 import net.iqbusiness.online.registration.dto.RegistrationResponse;
 import net.iqbusiness.online.registration.model.IqPerson;
 import net.iqbusiness.online.registration.service.PersonService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = {"/persons"})
@@ -25,5 +24,10 @@ public class PersonController {
         response.setId(person.getId());
         response.setSuccess(true);
         return response;
+    }
+
+    @GetMapping
+    public List<IqPerson> getAllPersons() {
+        return personService.getAllPersons();
     }
 }

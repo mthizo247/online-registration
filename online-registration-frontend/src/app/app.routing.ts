@@ -1,17 +1,12 @@
-﻿import { Routes, RouterModule } from '@angular/router';
+﻿import {RouterModule, Routes} from '@angular/router';
 
-import { HomeComponent } from './home';
-import { LoginComponent } from './login';
-import { RegisterComponent } from './register';
-import { AuthGuard } from './_helpers';
+import {HomeComponent} from './home';
+import {RegisterComponent} from './register';
 
 const routes: Routes = [
-    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
-    { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent },
-
-    // otherwise redirect to home
-    { path: '**', redirectTo: '' }
+    {path: '', component: HomeComponent},
+    {path: 'register', component: RegisterComponent},
+    {path: '**', redirectTo: ''}
 ];
 
 export const appRoutingModule = RouterModule.forRoot(routes);

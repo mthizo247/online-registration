@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
+import java.util.List;
+
 @Service
 @Transactional
 public class PersonService {
@@ -30,5 +32,9 @@ public class PersonService {
         person.setIdNumber(form.getIdNumber());
         person.setTelephoneNumber(form.getTelephoneNumber());
         return personRepository.save(person);
+    }
+
+    public List<IqPerson> getAllPersons() {
+        return personRepository.findAll();
     }
 }

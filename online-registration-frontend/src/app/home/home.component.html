@@ -1,9 +1,32 @@
-﻿<h1>Hi {{currentUser.firstName}}!</h1>
-<p>You're logged in with Angular 8!!</p>
-<h3>All registered users:</h3>
-<ul>
-    <li *ngFor="let user of users">
-        {{user.username}} ({{user.firstName}} {{user.lastName}})
-        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
-    </li>
-</ul>
+﻿<h3 style="margin-bottom: 40px;">Online Registration Application</h3>
+<p></p>
+<table class="table table-striped" [mfData]="users" #mf="mfDataTable" [mfRowsOnPage]="5">
+    <thead>
+    <tr>
+        <th style="width: 20%">
+            <mfDefaultSorter by="fullName">Full Name</mfDefaultSorter>
+        </th>
+        <th style="width: 50%">
+            <mfDefaultSorter by="idNumber">Id Number</mfDefaultSorter>
+        </th>
+        <th style="width: 30%">
+            <mfDefaultSorter by="telephoneNumber">Telephone Number</mfDefaultSorter>
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of mf.data">
+        <td>{{item.fullName}}</td>
+        <td>{{item.idNumber}}</td>
+        <td>{{item.telephoneNumber}}</td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="4">
+            <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+        </td>
+    </tr>
+    </tfoot>
+</table>
+<div style="float: right;"><a routerLink="/register" class="btn btn-link">Register</a></div>
