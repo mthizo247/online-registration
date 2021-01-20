@@ -44,3 +44,12 @@ build/
 
 ### VS Code ###
 .vscode/
+.gradle
+!gradle/wrapper/gradle-wrapper.jar
+
+### IntelliJ IDEA ###
+out/
+
+### VS Code ###
+*.zip
+*.jar
